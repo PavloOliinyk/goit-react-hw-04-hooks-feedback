@@ -1,27 +1,23 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from './FeedbackOptions.module.css';
 
-class FeedbackOptions extends Component {
-  render() {
-    const { options, onLeaveFeedback } = this.props;
-    return (
-      <ul className={`list ${s.feedbackList}`}>
-        {options.map(option => (
-          <li key={option}>
-            <button
-              className={s.btn}
-              type="button"
-              value={option}
-              onClick={() => onLeaveFeedback(option)}
-            >
-              {option}
-            </button>
-          </li>
-        ))}
-      </ul>
-    );
-  }
+function FeedbackOptions({ options, onLeaveFeedback }) {
+  return (
+    <ul className={`list ${s.feedbackList}`}>
+      {options.map(option => (
+        <li key={option}>
+          <button
+            className={s.btn}
+            type="button"
+            value={option}
+            onClick={() => onLeaveFeedback(option)}
+          >
+            {option}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 FeedbackOptions.propTypes = {

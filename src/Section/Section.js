@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from '../Container';
 
-class Section extends Component {
-  render() {
-    return (
-      <section>
-        <Container>
-          <h2>{this.props.title}</h2>
-          {this.props.children}
-        </Container>
-      </section>
-    );
-  }
+function Section({ title, children }) {
+  return (
+    <section>
+      <Container>
+        <h2>{title}</h2>
+        {children}
+      </Container>
+    </section>
+  );
 }
 
 Section.propTypes = {
